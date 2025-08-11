@@ -12,7 +12,7 @@ var deployCmd = &cobra.Command{
 	Short: "Deploy your application",
 	Long:  `Deploy your application to the specified environment.`,
 	Args:  cobra.ExactArgs(1),
-	Run: func(cmd *cobra.Command, args []string) {
+	Run: func(_ *cobra.Command, args []string) {
 		switch cloud := args[0]; cloud {
 		case "aws":
 			if config.AWSConnection() {
